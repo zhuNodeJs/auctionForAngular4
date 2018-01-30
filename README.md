@@ -1,2 +1,2 @@
-# auctionForAngular4
-angular 4.x 在线竞拍实例
+###### auctionForAngular4  angular4 的一个练习的实例
+
