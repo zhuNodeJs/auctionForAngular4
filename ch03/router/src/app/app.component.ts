@@ -13,6 +13,6 @@ export class AppComponent {
 
   }
   toProductDetail() {
-    this.router.navigate(['/product']);
+    this.router.navigate(['/product', 2]);
   }
 }
