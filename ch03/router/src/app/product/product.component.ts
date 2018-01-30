@@ -11,8 +11,9 @@ export class ProductComponent implements OnInit {
   constructor(private routeInfo: ActivatedRoute) { }
 
   ngOnInit() {
+     // 参数快照
      // this.productId = this.routeInfo.snapshot.params['id'];
-    // this.productId = this.routeInfo.params.subscribe((params: Params) => this.productId = params['id']);
+    // 参数订阅
     this.routeInfo.params.subscribe((params: Params) => this.productId = params["id"]);
   }
 
