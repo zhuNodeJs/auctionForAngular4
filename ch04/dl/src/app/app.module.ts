@@ -7,7 +7,7 @@ import { Product1Component } from './product1/product1.component';
 import {ProductService} from './shared/product.service';
 import { Product2Component } from './product2/product2.component';
 import {LoggerService} from './shared/logger.service';
-import {AnotherProductService} from "./share/another-product.service";
+import {AnotherProductService} from './share/another-product.service';
 
 
 @NgModule({
