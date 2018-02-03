@@ -10,7 +10,7 @@ import {Product, ProductService} from '../shared/product.service';
 export class ProductDetailComponent implements OnInit {
 
   private product: Product;
-  private comments: Component[];
+  private comments: Comment[];
 
   constructor(private routeInfo: ActivatedRoute, private productService: ProductService) { }
 
