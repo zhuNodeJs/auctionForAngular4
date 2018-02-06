@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<div>-->
+  <!--我是父组件-->
+<!--</div>-->
+<!--<div>-->
+  <!--<input type="text" placeholder="请输入股票代码" [(ngModel)]="stock">-->
+  <!--<app-order [stockCode]="stock" [amount]="100"></app-order>-->
+<!--</div>-->
+
+<!--<app-price-quote (lastPrice)="priceQuoteHandle($event)"></app-price-quote>-->
+<app-price-quote (buy)="buyQuoteHandle($event)"></app-price-quote>
+<!--<div>-->
+  <!--这是在报价组件外部，股票代码是{{priceQuote.stockCode}}-->
+  <!--股票价格是{{priceQuote.lastPrice | number: '2.2-2'}}-->
+<!--</div>-->
+<hr>
+<app-order [priceQuote]="priceQuote"></app-order>
