@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-life [name]="title"></app-life>
+<hr>
+<div class="parent">
+  <h2>我是父组件</h2>
+  <div>
+    问候语：<input type="text" [(ngModel)]="greeting">
+  </div>
+  <div>
+    姓名：<input type="text" [(ngModel)]="user.name">
+  </div>
+  <app-child [greeting]="greeting" [user]="user"></app-child>
+</div>
+<hr>
+<div>父组件调用子组件的方法函数</div>
+<app-child2 #child1>Loading...</app-child2>
+<app-child2 #child2>Loading...</app-child2>
+<button (click)="child2.greeting('ZHU')">第二种方法：模板中调用子组件方法</button>
+<br>
+{{message}}
