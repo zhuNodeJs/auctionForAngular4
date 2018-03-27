@@ -18,8 +18,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 
 
 const routeConfig: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'productDetail/:productId', component: ProductDetailComponent}
+  {path: '', component: <any>HomeComponent},
+  {path: 'productDetail/:productId', component: <any>ProductDetailComponent}
 ];
 
 @NgModule({
