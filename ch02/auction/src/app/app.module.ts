@@ -13,7 +13,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ProductService} from './shared/product.service';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { FilterPipe } from './pipe/filter.pipe';
 
 
@@ -38,6 +38,8 @@ const routeConfig: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
+    ReactiveFormsModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [ProductService],

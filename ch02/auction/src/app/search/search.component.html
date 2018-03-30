@@ -1,17 +1,26 @@
-<div>
-  <div class="form-group">
-    <label for="productTitles">商品名称：</label>
-    <input type="text" id="productTitles" placeholder="商品名称" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="productPrice">商品价格：</label>
-    <input type="text" id="productPrice" placeholder="商品价格" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="productCategory">商品类别：</label>
-    <input type="text" id="productCategory" placeholder="商品类别" class="form-control">
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary btn-clock">搜索</button>
-  </div>
-</div>
+<form name="searchForm" role="form" [formGroup]='formModel' (ngSubmit)="onSearch()" novalidate>
+    <div class="form-group" [class.has-error]='formModel.hasError("minlength", "title")'>
+        <label for="productTitles">商品名称：</label>
+        <input type="text" id="productTitle" formControlName="title" placeholder="商品名称" class="form-control">
+        <span class="help-block" [class.hidden]='!formModel.hasError("minlength","title")'>
+           请至少输入3个字
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="formModel.hasError('positiveNumber', 'price')">
+        <label for="productPrice">商品价格：</label>
+        <input type="text" id="productPrice" formControlName="price" placeholder="商品价格" class="form-control">
+        <span class="help-block" [class.hidden]='!formModel.hasError("positiveNumber", "price")'>
+          请输入正数
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="productCategory">商品类别：</label>
+        <select id="productCategory" formControlName="category" placeholder="商品类别" class="form-control">
+          <option value="-1">全部分类</option>
+          <option *ngFor="let categorie of categories" [value]="categorie">{{categorie}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-clock">搜索</button>
+      </div>
+</form>
