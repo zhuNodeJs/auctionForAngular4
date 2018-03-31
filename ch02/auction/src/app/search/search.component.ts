@@ -1,6 +1,6 @@
 import { ProductService } from './../shared/product.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { positiveNumberValidator } from '../validators/formValidators';
 
 @Component({
@@ -28,7 +28,9 @@ export class SearchComponent implements OnInit {
 
   onSearch() {
      if (this.formModel.valid) {
-       console.log(this.formModel.value);
+      //  console.log(this.formModel.value);
+      // 点击按钮来控制右边的商品的列表的显示;
+      this.productService.searchEvent.emit(this.formModel.value);
      }
   }
 

@@ -1,3 +1,5 @@
+import { WebsocketService } from './shared/websocket.service';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -40,9 +42,10 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig),
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
